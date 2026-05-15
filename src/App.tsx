@@ -21,7 +21,6 @@ const SITES = [
   'https://hatvp.thefrenchartist.dev/',
   'https://timeline_old.thefrenchartist.dev/',
   'https://wunderwiki.thefrenchartist.dev/',
-  'https://macronomicon.thefrenchartist.dev/',
   'https://easy-recipes.thefrenchartist.dev/',
   'https://character-relationships.thefrenchartist.dev/',
   'https://city-builder.thefrenchartist.dev/',
