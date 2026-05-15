@@ -44,7 +44,6 @@ const SITES = [
   'https://conway.thefrenchartist.dev/',
   'https://gpt-reco.thefrenchartist.dev/',
   'https://hatvp-rag.thefrenchartist.dev/',
-  'https://candidats-rn.thefrenchartist.dev/',
 ]
 
 function hostnameLabel(url: string) {
