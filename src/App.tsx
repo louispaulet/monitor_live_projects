@@ -250,9 +250,33 @@ export default function App() {
             <div className="rounded-[28px] border border-white/10 bg-panel/90 p-8 shadow-glow backdrop-blur-md">
               <p className="mb-2 text-sm font-bold uppercase tracking-[0.08em] text-accent">About</p>
               <h1 className="m-0 text-4xl font-black tracking-[-0.05em]">HashRouter deployed to GitHub Pages</h1>
-              <p className="mt-4 max-w-2xl text-muted">
-                This app uses a hash-based router so refreshing on GitHub Pages stays safe.
+              <p className="mt-4 max-w-3xl text-muted">
+                Louis Paulet builds sharp, public-facing AI and data tools that turn technical ideas into usable products, with a particular taste for benchmarks, civic transparency, and playful but serious web experiments.
               </p>
+
+              <div className="mt-8 grid gap-4 md:grid-cols-3">
+                <AboutCard
+                  title="Applied AI with usable interfaces"
+                  text="Retrieval tools, recommenders, browser ML, agent-style workspaces, and generative media projects — always wrapped in interfaces people can actually try."
+                />
+                <AboutCard
+                  title="Data storytelling and public-interest tooling"
+                  text="HATVP dashboards, transparency projects, benchmarks, and analytical writeups that make complex data easier to inspect and understand."
+                />
+                <AboutCard
+                  title="Strong builder energy"
+                  text="Prototype quickly, make it inspectable, and publish the thing. The work consistently favors live, testable builds over hidden experiments."
+                />
+              </div>
+
+              <div className="mt-8 rounded-[20px] border border-white/10 bg-white/5 p-5 text-sm text-muted">
+                <div className="font-bold text-text">What the portfolio signals</div>
+                <ul className="mt-3 space-y-2 pl-5">
+                  <li>Projects like Strange Wikipedia Atlas, Ponzi Simulator, Simple City Builder, Groq AllIn Studio, Exquisite Menus, MNIST in the browser, Maze Benchmark, Timeline Generator, and GPT YouTube Recommender support a coherent live-build narrative.</li>
+                  <li>The blog reinforces that credibility through LLM benchmarks, browser inference, civic data tooling, retrieval systems, and AI product experiments.</li>
+                </ul>
+              </div>
+
               <div className="mt-6 rounded-[20px] border border-white/10 bg-white/5 p-4 text-sm text-muted">
                 <div className="font-bold text-text">Backend</div>
                 <div className="mt-2">HEAD checker endpoint:</div>
@@ -302,6 +326,15 @@ function Stat({ label, value, valueClassName = '' }: { label: string; value: num
       <span className={`block text-[clamp(1.65rem,3vw,2.5rem)] font-black leading-none tracking-[-0.045em] ${valueClassName}`}>
         {value}
       </span>
+    </div>
+  )
+}
+
+function AboutCard({ title, text }: { title: string; text: string }) {
+  return (
+    <div className="rounded-[20px] border border-white/10 bg-panel2 p-5">
+      <h2 className="m-0 text-lg font-black tracking-[-0.03em] text-text">{title}</h2>
+      <p className="mt-3 text-sm leading-6 text-muted">{text}</p>
     </div>
   )
 }
