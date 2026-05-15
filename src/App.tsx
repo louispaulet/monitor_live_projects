@@ -149,6 +149,22 @@ export default function App() {
         path="/"
         element={
           <main className="mx-auto w-[min(1180px,calc(100%-32px))] py-12 pb-16">
+            <header className="mb-7 flex items-center justify-between gap-4 rounded-[24px] border border-white/10 bg-panel/70 px-5 py-4 backdrop-blur-md max-md:flex-col max-md:items-start">
+              <div>
+                <p className="mb-1 text-xs font-bold uppercase tracking-[0.14em] text-accent">TheFrenchArtist monitor</p>
+                <div className="flex items-center gap-3 text-sm text-muted">
+                  <Link className="font-bold text-text no-underline" to="/">
+                    Dashboard
+                  </Link>
+                  <span>•</span>
+                  <Link className="font-bold text-text no-underline" to="/about">
+                    About
+                  </Link>
+                </div>
+              </div>
+              <div className="text-sm text-muted">HashRouter enabled for GitHub Pages</div>
+            </header>
+
             <section className="mb-7 flex items-start justify-between gap-6 max-md:flex-col">
               <div>
                 <p className="mb-2 text-sm font-bold uppercase tracking-[0.08em] text-accent">POC dashboard</p>
@@ -205,12 +221,6 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="m-4 rounded-[20px] border border-dashed border-white/10 p-4 text-muted">
-                Using <code className="rounded bg-white/10 px-1.5 py-0.5">HEAD_CHECKER_ENDPOINT</code>:
-                {' '}
-                <code className="rounded bg-white/10 px-1.5 py-0.5">{HEAD_CHECKER_ENDPOINT}</code>
-              </div>
-
               <div className="grid grid-cols-6 gap-[clamp(4px,0.8vw,10px)] p-[clamp(8px,1.2vw,14px)] max-md:grid-cols-3 max-sm:grid-cols-2">
                 {loading && results.length === 0
                   ? SITES.map((url) => <Tile key={url} url={url} status="loading" up={false} />)
@@ -224,12 +234,33 @@ export default function App() {
         path="/about"
         element={
           <main className="mx-auto w-[min(980px,calc(100%-32px))] py-16">
+            <header className="mb-7 flex items-center justify-between gap-4 rounded-[24px] border border-white/10 bg-panel/70 px-5 py-4 backdrop-blur-md max-md:flex-col max-md:items-start">
+              <div>
+                <p className="mb-1 text-xs font-bold uppercase tracking-[0.14em] text-accent">TheFrenchArtist monitor</p>
+                <div className="flex items-center gap-3 text-sm text-muted">
+                  <Link className="font-bold text-text no-underline" to="/">
+                    Dashboard
+                  </Link>
+                  <span>•</span>
+                  <Link className="font-bold text-text no-underline" to="/about">
+                    About
+                  </Link>
+                </div>
+              </div>
+              <div className="text-sm text-muted">HashRouter enabled for GitHub Pages</div>
+            </header>
+
             <div className="rounded-[28px] border border-white/10 bg-panel/90 p-8 shadow-glow backdrop-blur-md">
               <p className="mb-2 text-sm font-bold uppercase tracking-[0.08em] text-accent">About</p>
               <h1 className="m-0 text-4xl font-black tracking-[-0.05em]">HashRouter deployed to GitHub Pages</h1>
               <p className="mt-4 max-w-2xl text-muted">
                 This app uses a hash-based router so refreshing on GitHub Pages stays safe.
               </p>
+              <div className="mt-6 rounded-[20px] border border-white/10 bg-white/5 p-4 text-sm text-muted">
+                <div className="font-bold text-text">Backend</div>
+                <div className="mt-2">HEAD checker endpoint:</div>
+                <code className="mt-2 inline-block rounded bg-white/10 px-1.5 py-0.5">{HEAD_CHECKER_ENDPOINT}</code>
+              </div>
               <Link className="mt-6 inline-flex rounded-full bg-text px-5 py-3 font-bold text-[#111318]" to="/">
                 Back home
               </Link>
@@ -243,7 +274,7 @@ export default function App() {
 
 function Tile({ url, status, up }: SiteResult) {
   return (
-    <article className="group grid aspect-square min-w-0 grid-rows-[auto_1fr_auto] gap-[clamp(3px,0.55vw,8px)] overflow-hidden rounded-[clamp(10px,1.5vw,18px)] border border-white/10 bg-panel2 p-[clamp(5px,0.8vw,10px)] transition hover:-translate-y-0.5 hover:border-white/20">
+    <a href={url} target="_blank" rel="noreferrer noopener" className="group grid aspect-square min-w-0 grid-rows-[auto_1fr_auto] gap-[clamp(3px,0.55vw,8px)] overflow-hidden rounded-[clamp(10px,1.5vw,18px)] border border-white/10 bg-panel2 p-[clamp(5px,0.8vw,10px)] transition hover:-translate-y-0.5 hover:border-white/20">
       <div className="flex items-center justify-between gap-1 min-w-0">
         <span className={`h-[clamp(8px,1.15vw,13px)] w-[clamp(8px,1.15vw,13px)] rounded-full ${up ? 'bg-green shadow-[0_0_0_clamp(3px,0.45vw,5px)_rgba(53,208,127,0.13)]' : 'bg-yellow shadow-[0_0_0_clamp(3px,0.45vw,5px)_rgba(245,196,81,0.13)]'}`} />
         <span className="min-w-0 truncate text-[clamp(0.42rem,0.8vw,0.68rem)] font-black uppercase tracking-[0.03em] text-muted">
@@ -263,7 +294,7 @@ function Tile({ url, status, up }: SiteResult) {
       <span className={`justify-self-center rounded-full bg-white/10 px-[clamp(4px,0.55vw,7px)] py-[clamp(2px,0.35vw,4px)] text-[clamp(0.36rem,0.68vw,0.58rem)] font-black uppercase tracking-[0.05em] ${up ? 'text-green' : 'text-red'}`}>
         {up ? 'HTTP 200' : 'Not 200'}
       </span>
-    </article>
+    </a>
   )
 }
 
