@@ -48,9 +48,6 @@ const SITES = [
   'https://louispaulet.github.io/',
   'http://face-classifier.thefrenchartist.dev/',
   'http://bernard.thefrenchartist.dev/',
-  'https://louispaulet.github.io/card_display/',
-  'https://louispaulet.github.io/card_share/',
-  'https://louispaulet.github.io/dirty_candidates_map/',
   'http://monitor.thefrenchartist.dev/',
   'https://louispaulet.github.io/fraud_tinder/',
 ]
