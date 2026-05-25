@@ -114,6 +114,11 @@ monitor.thefrenchartist.dev
 
 - `make up`
   - starts the local Vite dev server
+- `make upate`
+  - uses the local `gh` CLI to inspect the latest 20 public repos for `louispaulet`
+  - prints active GitHub Pages URLs that are not already monitored
+- `make update`
+  - alias for `make upate`
 - `make kill`
   - stops local Vite preview/dev processes used by this project
 - `make test`

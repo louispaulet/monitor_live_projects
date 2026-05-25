@@ -22,6 +22,16 @@ You can override the port:
 make up PORT=5174
 ```
 
+## Discover unmonitored GitHub Pages
+
+```bash
+make upate
+```
+
+`make upate` uses the local `gh` CLI to inspect the latest 20 public repositories for `louispaulet`,
+checks which ones have built GitHub Pages, and prints the active Pages URLs that are not already in
+the dashboard monitor list. `make update` is available as an alias.
+
 ## Test
 
 ```bash

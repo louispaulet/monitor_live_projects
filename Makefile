@@ -5,11 +5,16 @@ DOMAIN := monitor.thefrenchartist.dev
 DIST := dist
 PREVIEW_PID_FILE := .vite-preview.pid
 
-.PHONY: up kill test build deploy clean
+.PHONY: up upate update kill test build deploy clean
 
 up:
 	npm install
 	npm run dev -- --host 0.0.0.0 --port $(PORT)
+
+upate:
+	node scripts/list-unmonitored-gh-pages.mjs
+
+update: upate
 
 kill:
 	@if [ -f $(PREVIEW_PID_FILE) ]; then \
