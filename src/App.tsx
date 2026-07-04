@@ -50,6 +50,7 @@ const SITES = [
   'http://bernard.thefrenchartist.dev/',
   'http://monitor.thefrenchartist.dev/',
   'https://louispaulet.github.io/fraud_tinder/',
+  'https://cookie-clicker.thefrenchartist.dev/',
 ]
 
 function hostnameLabel(url: string) {
