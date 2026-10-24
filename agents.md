@@ -4,9 +4,9 @@ This file documents everything important about the frontend, backend contract, d
 
 ## Mandatory workflow
 
-- Always commit and push after every change, even when working on the `main` branch.
+- Always commit each completed repository change and push it to its upstream branch, including when working on `main` (`origin/main`).
 - Prefer small, focused commits.
-- Never leave the repository in a changed-but-uncommitted state after completing a task.
+- Never leave repository changes uncommitted or unpushed after completing a task.
 
 ## Frontend overview
 

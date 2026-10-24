@@ -29,8 +29,13 @@ make upate
 ```
 
 `make upate` uses the local `gh` CLI to inspect the latest 20 public repositories for `louispaulet`,
-checks which ones have built GitHub Pages, and prints the active Pages URLs that are not already in
-the dashboard monitor list. `make update` is available as an alias.
+checks which ones have a built GitHub Pages deployment, and prints Pages URLs that are not already
+in the dashboard monitor list. Before adding a result, confirm its URL responds successfully in a
+browser or with `curl -L`. Set `GH_PAGES_LIMIT=100` to scan up to 100 recent public repositories.
+`make update` is available as an alias.
+
+The repository-local Codex skill at `.agents/skills/add-monitor-projects/SKILL.md` documents this
+workflow, including the public-repository and live-site checks.
 
 ## Test
 

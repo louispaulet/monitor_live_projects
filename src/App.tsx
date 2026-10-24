@@ -166,7 +166,6 @@ export default function App() {
                   </Link>
                 </div>
               </div>
-              <div className="text-sm text-muted">HashRouter enabled for GitHub Pages</div>
             </header>
 
             <section className="mb-7 flex items-start justify-between gap-6 max-md:flex-col">
@@ -251,7 +250,6 @@ export default function App() {
                   </Link>
                 </div>
               </div>
-              <div className="text-sm text-muted">HashRouter enabled for GitHub Pages</div>
             </header>
 
             <div className="rounded-[28px] border border-white/10 bg-panel/90 p-8 shadow-glow backdrop-blur-md">
