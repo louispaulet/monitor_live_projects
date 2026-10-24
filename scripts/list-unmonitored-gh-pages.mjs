@@ -64,10 +64,13 @@ function isMonitored(repo, candidates, monitored) {
   const candidateUrls = candidates.map(normalizeUrl).filter(Boolean)
   const candidateHosts = candidates.map(hostname).filter(Boolean)
   const normalizedRepoSlug = repoSlug(repo.name)
+  const hasMonitoredDedicatedHost = candidateHosts.some(
+    (host) => !host.endsWith('.github.io') && monitored.hosts.has(host),
+  )
 
   return (
     candidateUrls.some((url) => monitored.urls.has(url)) ||
-    candidateHosts.some((host) => monitored.hosts.has(host)) ||
+    hasMonitoredDedicatedHost ||
     monitored.slugs.has(normalizedRepoSlug)
   )
 }
